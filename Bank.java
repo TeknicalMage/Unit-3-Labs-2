@@ -37,6 +37,7 @@ public class Bank {
 		}
 	}
 	public static void name() {
+		@SuppressWarnings("resource")
 		Scanner input = new Scanner(System.in);
 		a = input.nextLine();
 		AC.setName(a);
@@ -48,7 +49,7 @@ public class Bank {
 		Scanner input = new Scanner(System.in);
 		AC.i = input.nextInt();
 		AC.deposit(); 
-		System.out.print(AC.getBalance());
+		System.out.println(AC.getBalance());
 		main();
 	}
 	
@@ -57,8 +58,15 @@ public class Bank {
 		Scanner input = new Scanner(System.in);
 		AC.j = input.nextInt();
 		AC.withdraw(); 
-		System.out.print(AC.getBalance());
+		if (AC.getBalance() < 0) {
+			System.out.println("Test");
+			AC.setBalance(AC.getBalance()+AC.j);
+			System.out.println("Account Overdrawn. Please Try again");
+			main();
+		}else {
+		System.out.println(AC.getBalance());
 		main();
+		}
 	}
 	
 	public static void balance() {
