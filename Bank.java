@@ -32,7 +32,7 @@ public class Bank {
 		}else if(b.equals(name)){
 			rname();		
 		}else{
-			System.out.print("I N V A L I D");
+			System.out.println("I N V A L I D");
 			main();
 		}
 	}
@@ -41,7 +41,7 @@ public class Bank {
 		Scanner input = new Scanner(System.in);
 		a = input.nextLine();
 		AC.setName(a);
-		System.out.print(AC.getName());
+		System.out.println(AC.getName());
 	}
 	
 	public static void deposit() {
